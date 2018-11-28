@@ -2,25 +2,42 @@ let entidades = [];
 
 $(document).ready(function () {
     let boton = $("#cargarEntidades");
+    let botonLista = $("#cargarLista");
     boton.click(() => {
         $(event.target).prop("disabled", true);
-        $(event.target).html("Cargando entidades...");
         pedirEntidades();
+    });
+    botonLista.click(() => {
+        $(event.target).prop("disabled", true);
+        pedirLista();
     });
 });
 
 function pedirEntidades() {
     $.get(`http://127.0.0.1:5000/python-api/v1/`, (respuesta) => {
-        let entidadesJSON = respuesta.data;
-        entidades = entidades.concat(entidadesJSON);
-        drawUsuarios();
+        drawEntidades(respuesta);
+    });
+}
+
+function pedirLista () {
+    $.get(`http://127.0.0.1:5000/python-api/v1/book`, (respuesta) => {
+        console.log(respuesta);
+        $.each(respuesta, function (index, value) {
+        let div = $("<div></div>")
+        div.append(`<p>${index} : ${value.author.name}</p>`);
+        $("body").append(div);
+    });
     });
 }
 
 
-function drawEntidades() {
-    $("#cargarEntidades").remove();
-    console.log("printing traffic");
+function drawEntidades(entidades) {
+    console.log('ejecutando draw entidades');
     console.log(entidades);
+    $.each(entidades, function (index, value) {
+        let div = $("<div></div>")
+        div.append(`<p>${index} : ${value}</p>`);
+        $("body").append(div);
+    });
 }
 
