@@ -24,7 +24,12 @@ function pedirLista () {
         console.log(respuesta);
         $.each(respuesta, function (index, value) {
         let div = $("<div></div>")
-        div.append(`<p>${index} : ${value.author.name}</p>`);
+        console.log(index);
+        div.append(`<p> Autor : ${value.author.name}</p>`);
+        div.append(`<p> Fecha de publicación : ${value.datePublished}</p>`);
+        div.append(`<p> isbn : ${value.isbn}</p>`);
+        div.append(`<p> Título : ${value.name}</p>`);
+        div.append(`<p> Ruta del servicio : ${value.url}</p>`);
         $("body").append(div);
     });
     });
@@ -40,4 +45,12 @@ function drawEntidades(entidades) {
         $("body").append(div);
     });
 }
+
+$("#introducirEntidad").click(function(){
+        $("#introducirEntidadForm").toggle();
+    });
+
+
+
+
 
