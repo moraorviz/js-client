@@ -39,15 +39,15 @@
 
 <button id="cargarEntidades">GET url</button>
 <button id="cargarLista">GET url/entidad</button>
-<button type="button" id="introducirEntidad">POST url/entidad</button>
+<button id="introducirEntidad">POST url/entidad</button>
 
-<form name="formularioEntidad" id="introducirEntidadForm">
+<form action="http://127.0.0.1:5000/python-api/v1/book" id="entidadForm">
   <br>
   <b>Título:</b> <input type="text" name="name"><br>
   <b>Autor: </b><input type="text" name="author"><br>
   <b>ISBN (a-bbbb-cccc-d): </b><input type="text" name="isbn"><br>
   <b>Fecha de publicación (YYYY/MM/DD): </b><input type="text" name="datePublished"><br>
-  <button type="button" id="submitEntidad">Submit</button>
+  <input type="submit" value="Submit">
 </form>
 
     <!-- Optional JavaScript -->
