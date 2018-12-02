@@ -58,6 +58,8 @@ $("#entidadForm").submit(function (event) {
             },
             dataType: "json"
         });
+        alert(`Se ha hecho el POST al servidor. Compruebe con get`);
+        $(this).find(':input[type=submit]').prop('disabled', true);
     }
 });
 
