@@ -64,7 +64,7 @@ $("#entidadForm").submit(function (event) {
 });
 
 function pedirEntidades() {
-    $.get(`https://156.35.95.59:5000/python-api/v1/`, (respuesta) => {
+    $.get(`http://156.35.95.59:5000/python-api/v1/`, (respuesta) => {
         drawEntidades(respuesta);
     });
 }
