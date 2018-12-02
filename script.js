@@ -64,7 +64,7 @@ $("#entidadForm").submit(function (event) {
 });
 
 function pedirEntidades() {
-    $.get(`http://127.0.0.1:5000/python-api/v1/`, (respuesta) => {
+    $.get(`https://moraorviz:5000/python-api/v1/`, (respuesta) => {
         drawEntidades(respuesta);
     });
 }
