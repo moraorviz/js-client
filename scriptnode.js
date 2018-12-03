@@ -76,7 +76,7 @@ function drawEntidades(entidades) {
         div.append(`<br>`);
         console.log(index);
         console.log(value);
-        div.append(`<p>${index} : ${value[0].Tables_in_test}</p>`);
+        div.append(`<p>${JSON.stringify(value)}</p>`);
         $("body").append(div);
     });
 }
