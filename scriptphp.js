@@ -62,8 +62,7 @@ function pedirLista() {
             let div = $("<div></div>")
             console.log(index);
             div.append(`<br>`);
-            div.append(`<br>`);
-            div.append(`<p>${index} : ${value}</p>`);
+            div.append(`<p>${JSON.stringify(value)}</p>`);
             $("body").append(div);
         });
     });
@@ -75,7 +74,7 @@ function drawEntidades(entidades) {
     $.each(entidades, function (index, value) {
         let div = $("<div></div>")
         div.append(`<br>`);
-        div.append(`<p>${index} : ${value}</p>`);
+        div.append(`<p>${index} : ${value[0].Tables_in_produccion}</p>`);
         $("body").append(div);
     });
 }
