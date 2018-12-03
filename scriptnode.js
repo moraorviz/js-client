@@ -50,13 +50,13 @@ $("#entidadForm").submit(function (event) {
 
 
 function pedirEntidades() {
-    $.get(`http://localhost:3000/node-api/v1`, (respuesta) => {
+    $.get(`http://156.35.95.59:3000/node-api/v1`, (respuesta) => {
         drawEntidades(respuesta);
     });
 }
 
 function pedirLista() { 
-    $.get(`http://localhost:3000/node-api/v1/book`, (respuesta) => {
+    $.get(`http://156.35.95.59:3000/node-api/v1/book`, (respuesta) => {
         console.log(respuesta);
         $.each(respuesta, function (index, value) {
             let div = $("<div></div>")
